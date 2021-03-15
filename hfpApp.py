@@ -87,17 +87,19 @@ def main():
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
-        
-    tstr= st.text_input('Thalium stress Test Result Value: ')
-    nmv=st.text_input('number of major vessels: ')
-    rbp=st.text_input('Resting blood pressure: ')
+    
     Age=st.text_input('Age: ')
-    cp=st.text_input('Chest Pain Type: ')
     sex=st.text_input('sex: ')
+    cp=st.text_input('Chest Pain Type: ')
+    sc=st.text_input('serum Cholestrol: ')
+    tstr= st.text_input('Thalium stress Test Result Value: ')
+    rer=st.text_input('Resting Electrocardiographic Result: ')
+    nmv=st.text_input('number of major vessels: ')
+    rbp=st.text_input('Resting blood pressure: ')        
     spe=st.text_input('The slope of the peak exercise ST segment: ')
     sdierr=st.text_input('ST depression induced by exercise relative to rest: ')
-    rer=st.text_input('Resting Electrocardiographic Result: ')
-    sc=st.text_input('serum Cholestrol: ')
+    
+    
     
     result=""
     if st.button("Predict"):
