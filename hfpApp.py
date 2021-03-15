@@ -91,7 +91,7 @@ def main():
     Age=st.text_input('Age: ')
     sex=st.text_input('Sex: ')
     cp=st.text_input('Chest Pain Type: ')
-    sc=st.text_input('serum Cholestrol: ')
+    sc=st.text_input('Serum Cholestrol: ')
     tstr= st.text_input('Thalium stress Test Result Value: ')
     rer=st.text_input('Resting Electrocardiographic Result: ')
     nmv=st.text_input('Number of major vessels: ')
