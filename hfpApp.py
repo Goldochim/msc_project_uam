@@ -101,7 +101,7 @@ def main():
     
     result=""
     if st.button("Predict"):
-        result=heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc)
+        result=heart_failure_Prediction(tstr, nmv, rbp, Age, cp, sex, spe, sdierr, rer, sc)
     st.success(result)
     if st.button("Prediction Note"):
         st.text("This is a thesis work for Gold Ogeyi Ochim from the Federal University of Agriculture Makurdi")
