@@ -88,7 +88,7 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     
-    Age=st.text_input('Age: ')
+    Age=st.text_input("Age: ", "Enter the code")
     sex=st.text_input('Sex: ')
     cp=st.text_input('Chest Pain Type: ')
     sc=st.text_input('Serum Cholestrol: ')
