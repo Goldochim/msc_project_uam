@@ -88,8 +88,8 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     
-    Age=st.number_input("Age: ")
-    sex=st.number_input("Sex: ", "1-Male, 0=Female")
+    Age=st.number_input("Age: ", 0.0, 120.0, step=1)
+    sex=st.number_input("Sex: ", 0,1, step=1)
     cp=st.number_input("Chest Pain Type: ","1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic" )
     sc=st.number_input("Serum Cholestrol: ")
     tstr= st.number_input("Thalium stress Test Result Value: ","3-Normal, 6-fixed defect, 7-Reversible defect" )
