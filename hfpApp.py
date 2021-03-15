@@ -89,15 +89,15 @@ def main():
     st.markdown(html_temp, unsafe_allow_html=True)
     
     Age=st.number_input("Age: ")
-    sex=st.number_input('Sex: ', "1-Male, 0=Female")
-    cp=st.number_input('Chest Pain Type: ',"1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic" )
-    sc=st.number_input('Serum Cholestrol: ')
-    tstr= st.number_input('Thalium stress Test Result Value: ',"3-Normal, 6-fixed defect, 7-Reversible defect" )
-    rer=st.number_input('Resting Electrocardiographic Result: ', "0-Normal, 1-having ST-Wave abnormality, 2-showing probable or definite left ventricular hypertrophy by Estes' criteria")
-    nmv=st.number_input('Number of major vessels: ',"0-3")
-    rbp=st.number_input('Resting blood pressure: ')        
-    spe=st.number_input('The slope of the peak exercise ST segment: ',"1-Upslopping, 2- Flat, 3-Down slopping")
-    sdierr=st.number_input('ST depression induced by exercise relative to rest: ', "0-6.2")
+    sex=st.number_input("Sex: ", "1-Male, 0=Female")
+    cp=st.number_input("Chest Pain Type: ","1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic" )
+    sc=st.number_input("Serum Cholestrol: ")
+    tstr= st.number_input("Thalium stress Test Result Value: ","3-Normal, 6-fixed defect, 7-Reversible defect" )
+    rer=st.number_input("Resting Electrocardiographic Result: ", "0-Normal, 1-having ST-Wave abnormality, 2-showing probable or definite left ventricular hypertrophy by Estes' criteria")
+    nmv=st.number_input("Number of major vessels: ","0-3")
+    rbp=st.number_input("Resting blood pressure: ")        
+    spe=st.number_input("The slope of the peak exercise ST segment: ","1-Upslopping, 2- Flat, 3-Down slopping")
+    sdierr=st.number_input("ST depression induced by exercise relative to rest: ", "0-6.2")
     
     
     
