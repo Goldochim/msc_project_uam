@@ -90,7 +90,7 @@ def main():
     
     Age=st.number_input("Age: ", 0.0, 120.0, step=1.0)
     sex = st.selectbox("Sex: ", ('male', 'female'))
-    cp=st.selectbox("Chest Pain Type: ", ('Typical Angina', 'Atypical Angina', 'Non Angina', 'Asymptomatic') )    
+    cp=st.selectbox("Chest Pain Type: ", ('Typical Angina','Atypical Angina', 'Non Angina', 'Asymptomatic') )    
     sc=st.number_input("Serum Cholestrol: ", 0.0, 500.0, step=1.0)
     tstr= st.number_input("Thalium stress Test Result Value: ",3.0, 7.0, step=1.0 )
     rer=st.number_input("Resting Electrocardiographic Result: ", 0.0, 2.0, step=1.0)
