@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
 """
 Created on Mon Mar 15 21:23:47 2021
-
 @author: DELL
 """
 
@@ -10,7 +8,7 @@ import streamlit as st
 
 def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
         
-    if tstr<=3:
+    if tstr=='Normal':
         if nmv<=0:
             if rbp<=156:
                 result='NO HEART FAILURE'
@@ -28,7 +26,7 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                 print(result)
             else:
                 if sex=="female":
-                    if spe<=1:
+                    if spe=='Upsloping':
                         result='NO HEART FAILURE'
                         print(result)
                     else:
@@ -43,8 +41,8 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                 result='NO HEART FAILURE'
                 print(result)
             else:
-                if spe<=1:
-                    if rer<=1:
+                if spe=='Upsloping':
+                    if rer=='Normal' or rer=='Having ST Wave Abnormality':
                         result='NO HEART FAILURE'
                         print(result)
                     else:
@@ -55,9 +53,9 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                     print(result)
         else:
             if sdierr<=0.5:
-                if rer<=1:
+                if rer=='Normal' or rer=='Having ST Wave Abnormality':
                     if sdierr<=0.3:
-                        if rer<=136:
+                        if rbp<=136:
                             if sc<=233:
                                 result='NO HEART FAILURE'
                                 print(result)
@@ -90,13 +88,13 @@ def main():
     
     Age=st.number_input("Age: ", 0.0, 120.0, step=1.0)
     sex = st.selectbox("Sex: ", ('male', 'female'))
-    cp=st.selectbox("Chest Pain Type: ", ('Typical Angina','Atypical Angina', 'Non Angina', 'Asymptomatic') )    
+    cp=st.selectbox("Chest Pain Type: ", ('Typical Angina', 'Atypical Angina', 'Non Angina', 'Asymptomatic') )    
     sc=st.number_input("Serum Cholestrol: ", 0.0, 500.0, step=1.0)
-    tstr= st.number_input("Thalium stress Test Result Value: ",3.0, 7.0, step=1.0 )
-    rer=st.number_input("Resting Electrocardiographic Result: ", 0.0, 2.0, step=1.0)
+    tstr= st.selectbox("Thalium stress Test Result Value: ",('Normal', 'Fixed Defect', 'Reversible Defect'))
+    rer=st.selectbox("Resting Electrocardiographic Result: ", ('Normal', 'Having ST Wave Abnormality', 'Showing Probable or Definite Left Ventricular hypertrophy by Estes Criteria'))
     nmv=st.number_input("Number of major vessels: ",0.0, 3.0, step=1.0)
     rbp=st.number_input("Resting blood pressure: ", 0.0, 200.0, step=1.0)        
-    spe=st.number_input("The slope of the peak exercise ST segment: ",1.0, 3.0, step=1.0)
+    spe=st.selectbox("The slope of the peak exercise ST segment: ",('Upsloping', 'Flat', 'Downsloping'))
     sdierr=st.number_input("ST depression induced by exercise relative to rest: ", 0.0, 6.2, step=0.1)
     
     
@@ -110,7 +108,7 @@ def main():
     if st.button("Guide"):
         st.text("Chest pain type: 1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic")
         st.text("Thalium stress Test Result Value: 3-Normal, 6-fixed defect, 7-Reversible defect" )
-        st.text("Resting Electrocardiographic Result:  0-Normal, 1-having ST-Wave abnormality, 2-showing probable or definite left ventricular hypertrophy by Estes' criteria")
+        st.text("Resting Electrocardiographic Result:  0-Normal, 1-Having ST Wave Abnormality, 2-Showing Probable or definite left ventricular hypertrophy by Estes' criteria")
         st.text("Number of major vessels: 0-3")
         st.text("Resting blood pressure: 0-200 ")
         st.text("The slope of the peak exercise ST segment: 1-Upslopping, 2- Flat, 3-Down slopping")
