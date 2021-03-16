@@ -89,15 +89,15 @@ def main():
     st.markdown(html_temp, unsafe_allow_html=True)
     
     Age=st.number_input("Age: ", 0.0, 120.0, step=1.0)
-    sex=st.number_input("Sex: ", 0,1, step=1)
-    cp=st.number_input("Chest Pain Type: ","1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic" )
-    sc=st.number_input("Serum Cholestrol: ")
-    tstr= st.number_input("Thalium stress Test Result Value: ","3-Normal, 6-fixed defect, 7-Reversible defect" )
-    rer=st.number_input("Resting Electrocardiographic Result: ", "0-Normal, 1-having ST-Wave abnormality, 2-showing probable or definite left ventricular hypertrophy by Estes' criteria")
-    nmv=st.number_input("Number of major vessels: ","0-3")
-    rbp=st.number_input("Resting blood pressure: ")        
-    spe=st.number_input("The slope of the peak exercise ST segment: ","1-Upslopping, 2- Flat, 3-Down slopping")
-    sdierr=st.number_input("ST depression induced by exercise relative to rest: ", "0-6.2")
+    sex=st.number_input("Sex: ", 0.0,1.0, step=1.0)
+    cp=st.number_input("Chest Pain Type: ", 0.0, 4.0, step=1.0 )    
+    sc=st.number_input("Serum Cholestrol: ", 0.0, 500.0, step=1.0)
+    tstr= st.number_input("Thalium stress Test Result Value: ",3.0, 7.0, step=1.0 )
+    rer=st.number_input("Resting Electrocardiographic Result: ", 0.0, 2.0, step=1.0)
+    nmv=st.number_input("Number of major vessels: ",0.0, 3.0, step=1.0)
+    rbp=st.number_input("Resting blood pressure: ", 0.0, 200.0, step=1.0)        
+    spe=st.number_input("The slope of the peak exercise ST segment: ",1.0, 3.0, step=1.0)
+    sdierr=st.number_input("ST depression induced by exercise relative to rest: ", 0.0, 6.2, step=0.1)
     
     
     
@@ -107,6 +107,15 @@ def main():
     st.success(result)
     if st.button("Prediction Note"):
         st.text("This is a thesis work for Gold Ogeyi Ochim from the Federal University of Agriculture Makurdi")
-
+    if st.button("Guide"):
+        st.text("Chest pain type: 1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic")
+        st.text("Thalium stress Test Result Value: 3-Normal, 6-fixed defect, 7-Reversible defect" )
+        st.text("Resting Electrocardiographic Result:  0-Normal, 1-having ST-Wave abnormality, 2-showing probable or definite left ventricular hypertrophy by Estes' criteria")
+        st.text("Number of major vessels: 0-3")
+        st.text("Resting blood pressure: 0-200 ")
+        st.text("The slope of the peak exercise ST segment: 1-Upslopping, 2- Flat, 3-Down slopping")
+        st.text("ST depression induced by exercise relative to rest: 0-6.2")       
+        
+        
 if __name__=='__main__':
     main()
