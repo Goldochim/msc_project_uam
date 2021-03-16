@@ -23,7 +23,7 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                     result='NO HEART FAILURE'
                     print(result)
         else:
-            if cp<=3:
+            if cp=='Typical Angina' or cp=='Atypical Angina' or cp=='Non Angina':
                 result='NO HEART FAILURE'
                 print(result)
             else:
@@ -38,7 +38,7 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                     result='WARNING!!! HEART FAILURE PREDICTED!!!'
                     print(result)
     else:
-        if cp<=3:
+        if cp=='Typical Angina' or cp=='Atypical Angina' or cp=='Non Angina':
             if nmv<=0:
                 result='NO HEART FAILURE'
                 print(result)
@@ -90,7 +90,7 @@ def main():
     
     Age=st.number_input("Age: ", 0.0, 120.0, step=1.0)
     sex = st.selectbox("Sex: ", ('male', 'female'))
-    cp=st.number_input("Chest Pain Type: ", 0.0, 4.0, step=1.0 )    
+    cp=st.selectbox("Chest Pain Type: ", ('Typical Angina', 'Atypical Angina', 'Non Angina', 'Asymptomatic') )    
     sc=st.number_input("Serum Cholestrol: ", 0.0, 500.0, step=1.0)
     tstr= st.number_input("Thalium stress Test Result Value: ",3.0, 7.0, step=1.0 )
     rer=st.number_input("Resting Electrocardiographic Result: ", 0.0, 2.0, step=1.0)
