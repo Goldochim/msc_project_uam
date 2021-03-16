@@ -27,7 +27,7 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                 result='NO HEART FAILURE'
                 print(result)
             else:
-                if sex<=0:
+                if sex=="female':
                     if spe<=1:
                         result='NO HEART FAILURE'
                         print(result)
@@ -89,7 +89,7 @@ def main():
     st.markdown(html_temp, unsafe_allow_html=True)
     
     Age=st.number_input("Age: ", 0.0, 120.0, step=1.0)
-    sex = st.radio("Select Gender: ", ('male', 'female'))
+    sex = st.selectbox("Select Gender: ", ('male', 'female'))
     cp=st.number_input("Chest Pain Type: ", 0.0, 4.0, step=1.0 )    
     sc=st.number_input("Serum Cholestrol: ", 0.0, 500.0, step=1.0)
     tstr= st.number_input("Thalium stress Test Result Value: ",3.0, 7.0, step=1.0 )
