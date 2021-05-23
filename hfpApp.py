@@ -2,10 +2,7 @@
 Created on Mon Mar 15 21:23:47 2021
 @author: DELL
 """
-
 import streamlit as st
-
-
 def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
         
     if tstr=='Normal':
@@ -78,24 +75,34 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
     return result
 
 def main():
-    
+    st.title("Heart Failure Predictor Using AdaBoost J48 Model")
     html_temp="""
     <div style="background-color:tomato;padding:8px">
-    <h1 style="color:white;text-align:center;"> Heart Failure Predictor </h1>
+    <h2 style="color:white;text-align:center;"> Heart Failure Predictor </h2>
+
+    
+          
+            
+    
+
+          
+    
+    
+  
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
     
     Age=st.number_input("Age: ", 0.0, 120.0, step=1.0)
-    sex = st.selectbox("Sex: ", ('1-male', '0-female'))
-    cp=st.selectbox("cp: ", ('1-Typical Angina', '2-Atypical Angina', '3-Non Angina', '4-Asymptomatic') )    
-    sc=st.number_input("sc: ", 0.0, 500.0, step=1.0)
-    tstr= st.selectbox("tstr: ",('3-Normal', '6-Fixed Defect', '7-Reversible Defect'))
-    rer=st.selectbox("rer: ", ('0-Normal', '1-Having ST Wave Abnormality', '2-Showing Probable or Definite Left Ventricular hypertrophy by Estes Criteria'))
-    nmv=st.number_input("nmv: ",0.0, 3.0, step=1.0)
-    rbp=st.number_input("rbp: ", 0.0, 200.0, step=1.0)        
-    spe=st.selectbox("spe: ",('1-Upsloping', '2-Flat', '3-Downsloping'))
-    sdierr=st.number_input("sdierr: ", 0.0, 6.2, step=0.1)
+    sex = st.selectbox("Sex: ", ('male', 'female'))
+    cp=st.selectbox("Chest Pain Type: ", ('Typical Angina', 'Atypical Angina', 'Non Angina', 'Asymptomatic') )    
+    sc=st.number_input("Serum Cholestrol: ", 0.0, 500.0, step=1.0)
+    tstr= st.selectbox("Thalium stress Test Result Value: ",('Normal', 'Fixed Defect', 'Reversible Defect'))
+    rer=st.selectbox("Resting Electrocardiographic Result: ", ('Normal', 'Having ST Wave Abnormality', 'Showing Probable or Definite Left Ventricular hypertrophy by Estes Criteria'))
+    nmv=st.number_input("Number of major vessels: ",0.0, 3.0, step=1.0)
+    rbp=st.number_input("Resting blood pressure: ", 0.0, 200.0, step=1.0)        
+    spe=st.selectbox("The slope of the peak exercise ST segment: ",('Upsloping', 'Flat', 'Downsloping'))
+    sdierr=st.number_input("ST depression induced by exercise relative to rest: ", 0.0, 6.2, step=0.1)
     
     
     
@@ -103,16 +110,16 @@ def main():
     if st.button("Predict"):
         result=heart_failure_Prediction(tstr, nmv, rbp, Age, cp, sex, spe, sdierr, rer, sc)
     st.success(result)
-    if st.button("Owner's Note"):
-        st.text("This is the implementation of the Adaboost J48 model for heart failure, a thesis work for Gold Ogeyi Ochim and Supervisor, Dr. I. Agaji from the Federal University of Agriculture Makurdi, May 2021")
+    if st.button("Prediction Note"):
+        st.text("This is a thesis work for Gold Ogeyi Ochim from the Federal University of Agriculture Makurdi")
     if st.button("Guide"):
-        st.text("cp-Chest pain type: 1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic")
-        st.text("tstr-Thalium stress Test Result Value: 3-Normal, 6-fixed defect, 7-Reversible defect" )
-        st.text("rer-Resting Electrocardiographic Result:  0-Normal, 1-Having ST Wave Abnormality, 2-Showing Probable or definite left ventricular hypertrophy by Estes' criteria")
-        st.text("nmv-Number of major vessels: 0-3")
-        st.text("rbp-Resting blood pressure: 0-200 ")
-        st.text("spe-The slope of the peak exercise ST segment: 1-Upslopping, 2- Flat, 3-Down slopping")
-        st.text("sdierr-ST depression induced by exercise relative to rest: 0-6.2")       
+        st.text("Chest pain type: 1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic")
+        st.text("Thalium stress Test Result Value: 3-Normal, 6-fixed defect, 7-Reversible defect" )
+        st.text("Resting Electrocardiographic Result:  0-Normal, 1-Having ST Wave Abnormality, 2-Showing Probable or definite left ventricular hypertrophy by Estes' criteria")
+        st.text("Number of major vessels: 0-3")
+        st.text("Resting blood pressure: 0-200 ")
+        st.text("The slope of the peak exercise ST segment: 1-Upslopping, 2- Flat, 3-Down slopping")
+        st.text("ST depression induced by exercise relative to rest: 0-6.2")       
         
         
 if __name__=='__main__':
