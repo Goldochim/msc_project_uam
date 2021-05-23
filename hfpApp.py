@@ -95,14 +95,14 @@ def main():
     
     Age=st.number_input("Age: ", 0.0, 120.0, step=1.0)
     sex = st.selectbox("Sex: ", ('male', 'female'))
-    cp=st.selectbox("Chest Pain Type: ", ('Typical Angina', 'Atypical Angina', 'Non Angina', 'Asymptomatic') )    
-    sc=st.number_input("Serum Cholestrol: ", 0.0, 500.0, step=1.0)
-    tstr= st.selectbox("Thalium stress Test Result Value: ",('Normal', 'Fixed Defect', 'Reversible Defect'))
-    rer=st.selectbox("Resting Electrocardiographic Result: ", ('Normal', 'Having ST Wave Abnormality', 'Showing Probable or Definite Left Ventricular hypertrophy by Estes Criteria'))
-    nmv=st.number_input("Number of major vessels: ",0.0, 3.0, step=1.0)
-    rbp=st.number_input("Resting blood pressure: ", 0.0, 200.0, step=1.0)        
-    spe=st.selectbox("The slope of the peak exercise ST segment: ",('Upsloping', 'Flat', 'Downsloping'))
-    sdierr=st.number_input("ST depression induced by exercise relative to rest: ", 0.0, 6.2, step=0.1)
+    cp=st.selectbox("cp: ", ('Typical Angina', 'Atypical Angina', 'Non Angina', 'Asymptomatic') )    
+    sc=st.number_input("sc: ", 0.0, 500.0, step=1.0)
+    tstr= st.selectbox("tstr: ",('Normal', 'Fixed Defect', 'Reversible Defect'))
+    rer=st.selectbox("rer: ", ('Normal', 'Having ST Wave Abnormality', 'Showing Probable or Definite Left Ventricular hypertrophy by Estes Criteria'))
+    nmv=st.number_input("nmv: ",0.0, 3.0, step=1.0)
+    rbp=st.number_input("rbp: ", 0.0, 200.0, step=1.0)        
+    spe=st.selectbox("spe: ",('Upsloping', 'Flat', 'Downsloping'))
+    sdierr=st.number_input("sdierr: ", 0.0, 6.2, step=0.1)
     
     
     
