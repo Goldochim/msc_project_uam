@@ -5,7 +5,7 @@ Created on Mon Mar 15 21:23:47 2021
 import streamlit as st
 def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
         
-    if tstr=='Normal':
+    if tstr=='3-Normal':
         if nmv<=0:
             if rbp<=156:
                 result='NO HEART FAILURE'
@@ -18,12 +18,12 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                     result='NO HEART FAILURE'
                     print(result)
         else:
-            if cp=='Typical Angina' or cp=='Atypical Angina' or cp=='Non Angina':
+            if cp=='1-Typical Angina' or cp=='2-Atypical Angina' or cp=='3-Non Angina':
                 result='NO HEART FAILURE'
                 print(result)
             else:
-                if sex=="female":
-                    if spe=='Upsloping':
+                if sex=="0-female":
+                    if spe=='1-Upsloping':
                         result='NO HEART FAILURE'
                         print(result)
                     else:
@@ -33,13 +33,13 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                     result='WARNING!!! HEART FAILURE PREDICTED!!!'
                     print(result)
     else:
-        if cp=='Typical Angina' or cp=='Atypical Angina' or cp=='Non Angina':
+        if cp=='1-Typical Angina' or cp=='2-Atypical Angina' or cp=='3-Non Angina':
             if nmv<=0:
                 result='NO HEART FAILURE'
                 print(result)
             else:
-                if spe=='Upsloping':
-                    if rer=='Normal' or rer=='Having ST Wave Abnormality':
+                if spe=='1-Upsloping':
+                    if rer=='0-Normal' or rer=='1-Having ST Wave Abnormality':
                         result='NO HEART FAILURE'
                         print(result)
                     else:
@@ -50,7 +50,7 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                     print(result)
         else:
             if sdierr<=0.5:
-                if rer=='Normal' or rer=='Having ST Wave Abnormality':
+                if rer=='0-Normal' or rer=='1-Having ST Wave Abnormality':
                     if sdierr<=0.3:
                         if rbp<=136:
                             if sc<=233:
@@ -91,14 +91,14 @@ def main():
     st.markdown(html_temp, unsafe_allow_html=True)
 
     Age=st.number_input("Age: ", 0.0, 120.0, step=1.0)
-    sex = st.selectbox("Sex: ", ('male', 'female'))
-    cp=st.selectbox("cp: ", ('Typical Angina', 'Atypical Angina', 'Non Angina', 'Asymptomatic') )    
+    sex = st.selectbox("Sex: ", ('1-male', '0-female'))
+    cp=st.selectbox("cp: ", ('1-Typical Angina', '2-Atypical Angina', '3-Non Angina', '4-Asymptomatic') )    
     sc=st.number_input("sc: ", 0.0, 500.0, step=1.0)
-    tstr= st.selectbox("tstr: ",('Normal', 'Fixed Defect', 'Reversible Defect'))
-    rer=st.selectbox("rer: ", ('Normal', 'Having ST Wave Abnormality', 'Showing Probable or Definite Left Ventricular hypertrophy by Estes Criteria'))
+    tstr= st.selectbox("tstr: ",('3-Normal', '6-Fixed Defect', '7-Reversible Defect'))
+    rer=st.selectbox("rer: ", ('0-Normal', '1-Having ST Wave Abnormality', '2-Showing Probable or Definite Left Ventricular hypertrophy by Estes Criteria'))
     nmv=st.number_input("nmv: ",0.0, 3.0, step=1.0)
     rbp=st.number_input("rbp: ", 0.0, 200.0, step=1.0)        
-    spe=st.selectbox("spe: ",('Upsloping', 'Flat', 'Downsloping'))
+    spe=st.selectbox("spe: ",('1-Upsloping', '2-Flat', '3-Downsloping'))
     sdierr=st.number_input("sdierr: ", 0.0, 6.2, step=0.1)
 
 
