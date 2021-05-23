@@ -120,13 +120,13 @@ def main():
     if st.button("Prediction Note"):
         st.text("This is a thesis work for Gold Ogeyi Ochim from the Federal University of Agriculture Makurdi")
     if st.button("Guide"):
-        st.text("Chest pain type: 1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic")
-        st.text("Thalium stress Test Result Value: 3-Normal, 6-fixed defect, 7-Reversible defect" )
-        st.text("Resting Electrocardiographic Result:  0-Normal, 1-Having ST Wave Abnormality, 2-Showing Probable or definite left ventricular hypertrophy by Estes' criteria")
-        st.text("Number of major vessels: 0-3")
-        st.text("Resting blood pressure: 0-200 ")
-        st.text("The slope of the peak exercise ST segment: 1-Upslopping, 2- Flat, 3-Down slopping")
-        st.text("ST depression induced by exercise relative to rest: 0-6.2")       
+        st.text("cp-Chest pain type: 1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic")
+        st.text("tstr-Thalium stress Test Result Value: 3-Normal, 6-fixed defect, 7-Reversible defect" )
+        st.text("rer-Resting Electrocardiographic Result:  0-Normal, 1-Having ST Wave Abnormality, 2-Showing Probable or definite left ventricular hypertrophy by Estes' criteria")
+        st.text("nmv-Number of major vessels: 0-3")
+        st.text("rer-Resting blood pressure: 0-200 ")
+        st.text("spe-The slope of the peak exercise ST segment: 1-Upslopping, 2- Flat, 3-Down slopping")
+        st.text("sdierr-ST depression induced by exercise relative to rest: 0-6.2")       
         
         
 if __name__=='__main__':
