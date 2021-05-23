@@ -74,10 +74,10 @@ def heart_failure_Prediction(tstr, nmv,rbp, Age, cp, sex, spe, sdierr, rer, sc):
                 
     return result
 def main():
-    st.title("Heart Failure Predictor Using AdaBoost J48 Model")
+    
     html_temp="""
     <div style="background-color:tomato;padding:8px">
-    <h2 style="color:white;text-align:center;"> Heart Failure Predictor </h2>
+    <h1 style="color:white;text-align:center;"> Heart Failure Predictor </h1>
     
           
             
