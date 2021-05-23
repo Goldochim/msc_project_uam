@@ -104,7 +104,7 @@ def main():
         result=heart_failure_Prediction(tstr, nmv, rbp, Age, cp, sex, spe, sdierr, rer, sc)
     st.success(result)
     if st.button("Owner's Note"):
-        st.text("This is a the implementation of the Adaboost J48 model for heart failure, a thesis work for Gold Ogeyi Ochim from the Federal University of Agriculture Makurdi, May 2021")
+        st.text("This is the implementation of the Adaboost J48 model for heart failure, a thesis work for Gold Ogeyi Ochim and Supervisor, Dr. I. Agaji from the Federal University of Agriculture Makurdi, May 2021")
     if st.button("Guide"):
         st.text("cp-Chest pain type: 1-Typical angina, 2-Atypical anginal, 3-Non anginal, 4-Asymptomatic")
         st.text("tstr-Thalium stress Test Result Value: 3-Normal, 6-fixed defect, 7-Reversible defect" )
