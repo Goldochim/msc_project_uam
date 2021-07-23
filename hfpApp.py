@@ -80,12 +80,6 @@ def main():
     <h1 style="color:white;text-align:center;"> Heart Failure Predictor </h1>
     
           
-            
-    
-          
-    
-    
-  
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
