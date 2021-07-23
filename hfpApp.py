@@ -94,18 +94,6 @@ def main():
     rbp=st.number_input("rbp: ", 0.0, 200.0, step=1.0)        
     spe=st.selectbox("spe: ",('1-Upsloping', '2-Flat', '3-Downsloping'))
     sdierr=st.number_input("sdierr: ", 0.0, 6.2, step=0.1)
-
-
-
-
-    
-          
-            
-    
-
-          
-    
-    
   
     result=""
     if st.button("Predict"):
