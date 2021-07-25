@@ -80,6 +80,12 @@ def main():
     <h1 style="color:white;text-align:center;"> Heart Failure Predictor </h1>
     
           
+            
+    
+          
+    
+    
+  
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
@@ -94,6 +100,18 @@ def main():
     rbp=st.number_input("rbp: ", 0.0, 200.0, step=1.0)        
     spe=st.selectbox("spe: ",('1-Upsloping', '2-Flat', '3-Downsloping'))
     sdierr=st.number_input("sdierr: ", 0.0, 6.2, step=0.1)
+
+
+
+
+    
+          
+            
+    
+
+          
+    
+    
   
     result=""
     if st.button("Predict"):
